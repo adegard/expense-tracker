@@ -56,12 +56,29 @@ fi
 # ---------------------------------------------------------------- remote + push
 if gh auth status >/dev/null 2>&1; then
   USER=$(gh api user --jq .login)
+  SLUG="${REPO_SLUG:-$USER/$REPO}"
   if git remote get-url origin >/dev/null 2>&1; then
     echo "--- origin already set: $(git remote get-url origin)"
   else
-    gh repo create "$REPO" --"$VISIBILITY" --source=. --remote=origin \
-      --description "Android expense tracker with Italian bank CSV import" >/dev/null
-    echo "--- created github.com/$USER/$REPO ($VISIBILITY)"
+    if ! gh repo view "$SLUG" >/dev/null 2>&1; then
+      # it does not exist yet: ask gh to create it
+      if ! gh repo create "$SLUG" --"$VISIBILITY" \
+           --description "Android expense tracker with Italian bank CSV import" >/dev/null 2>&1; then
+        echo >&2
+        echo "The current GITHUB_TOKEN cannot create repositories." >&2
+        echo "Pick one:" >&2
+        echo "  a) open https://github.com/new  ->  name '$REPO', $VISIBILITY, no README," >&2
+        echo "     then run this script again" >&2
+        echo "  b) unset GITHUB_TOKEN && gh auth login   (a token allowed to create repos)" >&2
+        echo "  c) point the script at a repo that already exists:" >&2
+        echo "     REPO_SLUG=$SLUG sh release.sh" >&2
+        exit 1
+      fi
+      echo "--- created github.com/$SLUG ($VISIBILITY)"
+    else
+      echo "--- github.com/$SLUG already exists"
+    fi
+    git remote add origin "https://github.com/$SLUG.git"
   fi
   git push -u origin main
 
@@ -70,10 +87,10 @@ if gh auth status >/dev/null 2>&1; then
     TAG="v$VERSION"
     git tag -f "$TAG" >/dev/null
     git push -f origin "$TAG" >/dev/null
-    if gh release view "$TAG" >/dev/null 2>&1; then
+    if gh release view "$TAG" --repo "$SLUG" >/dev/null 2>&1; then
       echo "--- release $TAG exists, asset skipped"
     else
-      gh release create "$TAG" \
+      gh release create "$TAG" --repo "$SLUG" \
         --title "Expense Tracker $TAG" \
         --notes "APK allegato. Install: scarica, abilita 'fonti sconosciute', apri e installa.
 Min Android 7.0 (API 24). Nessun permesso richiesto." \
@@ -81,8 +98,8 @@ Min Android 7.0 (API 24). Nessun permesso richiesto." \
       echo "--- release $TAG published with the APK"
     fi
     echo
-    echo "Repo:    https://github.com/$USER/$REPO"
-    echo "Release: https://github.com/$USER/$REPO/releases/tag/$TAG"
+    echo "Repo:    https://github.com/$SLUG"
+    echo "Release: https://github.com/$SLUG/releases/tag/$TAG"
   fi
 else
   echo
