@@ -40,8 +40,9 @@ fi
 
 if [ ! -d .git ]; then
   git init -q
-  git branch -M main
 fi
+# a repository initialised by an earlier run may still be on master
+git branch -M main
 git config user.name >/dev/null 2>&1 || git config user.name "Expense Tracker"
 git config user.email >/dev/null 2>&1 || git config user.email "noreply@users.noreply.github.com"
 
