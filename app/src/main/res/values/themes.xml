@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.ExpenseTracker" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#2E7D32</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#A5D6A7</item>
+        <item name="colorOnPrimaryContainer">#0A3D0C</item>
+        <item name="colorSecondary">#52634F</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorSecondaryContainer">#D5E8CE</item>
+        <item name="colorOnSecondaryContainer">#101F10</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+    </style>
+</resources>

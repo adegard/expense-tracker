@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Expense Tracker</string>
+
+    <string name="action_import">Importa CSV</string>
+    <string name="action_stats">Statistiche</string>
+    <string name="action_export">Esporta backup</string>
+    <string name="action_restore">Ripristina backup</string>
+    <string name="action_history">Cronologia import</string>
+    <string name="action_delete_all">Elimina tutto</string>
+
+    <string name="all_months">Tutti i mesi</string>
+    <string name="label_income">Entrate</string>
+    <string name="label_expense">Uscite</string>
+    <string name="label_balance">Saldo</string>
+    <string name="zero">0</string>
+    <string name="avg_per_day">Media giornaliera: %1$s</string>
+    <string name="hint_search">Cerca...</string>
+    <string name="prev_month">Mese precedente</string>
+    <string name="next_month">Mese successivo</string>
+    <string name="empty_list">Nessuna operazione.\nTocca «Importa CSV» per caricare l\'estratto conto, oppure usa + per aggiungerne una.</string>
+    <string name="unknown_merchant">Senza descrizione</string>
+    <string name="dup_hint">Possibile duplicato</string>
+
+    <string name="add_tx">Nuova operazione</string>
+    <string name="edit_tx">Modifica operazione</string>
+    <string name="hint_amount">Importo</string>
+    <string name="hint_date">Data</string>
+    <string name="hint_value_date">Valuta</string>
+    <string name="hint_merchant">Negozio / descrizione</string>
+    <string name="hint_category">Categoria</string>
+    <string name="hint_note">Nota</string>
+    <string name="err_amount">Inserisci un importo valido</string>
+    <string name="save">Salva</string>
+    <string name="delete">Elimina</string>
+    <string name="delete_title">Eliminare operazione?</string>
+    <string name="delete_msg">Verrà eliminata \"%1$s\".</string>
+    <string name="delete_all_title">Eliminare tutti i dati?</string>
+    <string name="delete_all_msg">Tutte le operazioni e la cronologia import verranno cancellate dal dispositivo. Il backup automatico in Documenti/ExpenseTracker resterà disponibile per il ripristino.</string>
+
+    <string name="import_done">Importazione completata</string>
+    <string name="import_nothing_new">Nessuna nuova operazione</string>
+    <string name="import_already_done">Queste operazioni erano già in elenco: sono state riconosciute come duplicate e non sono state ricreate.</string>
+    <string name="import_no_rows">Nessuna riga riconosciuta. Il file deve essere l\'estratto conto in formato CSV con le colonne DATA CONTABILE, USCITE, ENTRATE, CAUSALE, DESCRIZIONE OPERAZIONE.</string>
+    <string name="stats_error">Impossibile calcolare le statistiche</string>
+    <string name="category_pick_title">Assegna categoria</string>
+    <string name="category_set">Categoria impostata: %1$s</string>
+    <string name="delete_op">— Elimina operazione —</string>
+    <string name="import_failed">Importazione non riuscita</string>
+    <string name="import_file">File: %1$s</string>
+    <string name="import_total">Righe lette: %1$d</string>
+    <string name="import_added">Operazioni importate: %1$d</string>
+    <string name="import_dups">Duplicati ignorati: %1$d</string>
+    <string name="import_skipped">Righe non elaborate: %1$d</string>
+    <string name="import_exp">Totale uscite del file: %1$s</string>
+    <string name="import_inc">Totale entrate del file: %1$s</string>
+    <string name="no_imports">Nessuna importazione registrata.</string>
+    <string name="history_row">%1$s — %2$s\n+%3$d nuove, %4$d ignorate</string>
+
+    <string name="backup_saved">Backup salvato</string>
+    <string name="backup_failed">Salvataggio non riuscito</string>
+    <string name="restore_title">Ripristinare backup?</string>
+    <string name="restore_msg">I dati attuali verranno sostituiti da quelli del file di backup.</string>
+    <string name="restored_n">%1$d operazioni ripristinate</string>
+
+    <string name="range_6m">Ultimi 6 mesi</string>
+    <string name="range_12m">Ultimi 12 mesi</string>
+    <string name="range_year">Anno corrente</string>
+    <string name="range_prev_year">Anno precedente</string>
+    <string name="range_title_year">Anno %1$d</string>
+    <string name="range_title_12m">Ultimi 12 mesi</string>
+    <string name="cat_total">Totale uscite: %1$s</string>
+    <string name="cat_line">%1$s · %2$d%% · %3$d op.</string>
+    <string name="category_trend">Andamento per categoria</string>
+    <string name="category_pick_label">Categoria</string>
+    <string name="cat_line_sum">Totale nel periodo: %1$s · media %2$s/mese · picco %3$s</string>
+
+    <string name="action_recat">Ricategorizza tutto</string>
+    <string name="recat_title">Ricategorizza tutto</string>
+    <string name="recat_msg">Ricalcola la categoria di tutte le operazioni in base alla descrizione.\n\nLe categorie scelte a mano vengono mantenute.</string>
+    <string name="recat_run">Ricategorizza</string>
+    <string name="recat_done">%1$d operazioni aggiornate, %2$d lasciate perché modificate a mano</string>
+    <string name="range_month_btn">Mese scelto</string>
+    <string name="last_months">Andamento ultimi %1$d mesi</string>
+    <string name="range_month">Dettaglio: %1$s</string>
+    <string name="by_category">Uscite per categoria</string>
+    <string name="top_merchants">Negozi più costosi</string>
+    <string name="no_data">Nessun dato</string>
+    <string name="times_n">%1$s · %2$d volte</string>
+
+    <string-array name="filter_types">
+        <item>Tutto</item>
+        <item>Uscite</item>
+        <item>Entrate</item>
+    </string-array>
+
+    <plurals name="tx_count">
+        <item quantity="one">%1$d operazione</item>
+        <item quantity="other">%1$d operazioni</item>
+    </plurals>
+</resources>

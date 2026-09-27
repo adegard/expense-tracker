@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="expense">#D32F2F</color>
+    <color name="income">#2E7D32</color>
+    <color name="warn">#F57C00</color>
+    <color name="ic_launcher_background">#1B5E20</color>
+</resources>

@@ -1,0 +1,25 @@
+# Gradle / Android
+.gradle/
+build/
+app/build/
+local.properties
+*.iml
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# keystores must never be committed
+*.jks
+*.keystore
+keystore.properties
+
+# build output, logs and the scratch APKs kept at the project root
+*.apk
+*.aab
+build.log
+build-errors.txt
+
+# OS noise
+.DS_Store
+Thumbs.db

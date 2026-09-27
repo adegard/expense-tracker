@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark mode: light green accents on dark surfaces, so toolbar icons, tonal and
+         outlined buttons all keep their contrast. -->
+    <style name="Theme.ExpenseTracker" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#A5D6A7</item>
+        <item name="colorOnPrimary">#0A3D0C</item>
+        <item name="colorPrimaryContainer">#2E7D32</item>
+        <item name="colorOnPrimaryContainer">#C8E6C9</item>
+        <item name="colorSecondary">#B9CCB4</item>
+        <item name="colorOnSecondary">#243424</item>
+        <item name="colorSecondaryContainer">#3A4A38</item>
+        <item name="colorOnSecondaryContainer">#D5E8CE</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+    </style>
+</resources>
